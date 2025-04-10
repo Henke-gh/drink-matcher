@@ -1,2 +1,3 @@
-# drink-matcher
-Matching drinks with occasion
+# Drink Matcher
+
+Matching drinks with occasions.
