@@ -1,6 +1,8 @@
 :root {
   --white: rgba(255, 255, 255, 0.87);
   --black: #242424;
+  --grey: #3b3b3b;
+  --coming-soon: "Coming Soon", sans-serif;
   color: var(--white);
   background-color: var(--black);
 }
