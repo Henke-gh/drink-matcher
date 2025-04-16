@@ -1,20 +1,21 @@
 header {
   display: flex;
   flex-direction: row;
+  width: 100%;
   align-items: baseline;
-  gap: 15px;
 }
 
 .mainHeader {
   font-family: "Barrio", system-ui;
   font-weight: 400;
   font-style: normal;
-  font-size: 3.5rem;
-  border-bottom: var(--white) solid 1px;
+  font-size: 2.5rem;
+  border-bottom: var(--yellow) solid 1px;
+  margin-left: 1rem;
 }
 
-.cocktailImage {
-  width: 3rem;
-  height: 3rem;
+.iconImage {
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
 }

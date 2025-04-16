@@ -11,7 +11,6 @@ function App() {
       <Presentation/>
       <ActionGrid />
         <Footer />
-    
     </>
   );
 }
