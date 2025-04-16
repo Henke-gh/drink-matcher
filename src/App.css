@@ -6,20 +6,4 @@ body {
     font-family: "Comic Sans MS", "Comic Sans", cursive;
   }
   
-  .presentation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #282c34;
-    color: white;
-    padding: 0 20px;
-    text-align: center;
-  }
   
-  p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
