@@ -2,14 +2,18 @@ import "./CardContainer.css";
 import Card from "../Card/Card";
 import useDataFetch from "../../hooks/Fetch";
 
-export default function CardContainer() {
-  const { data: drink, loading, error } = useDataFetch("11007");
+export default function CardContainer({ selectedDrinkIDs }) {
+  const { data: drinks, loading, error } = useDataFetch(selectedDrinkIDs);
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   return (
     <div className="cardContainer">
       <h1 className="drinkResultsHeader">Enjoy your drinks!</h1>
-      <Card drink={drink} />
+      <div className="cards">
+        {drinks.map((drink, index) => (
+          <Card key={index} drink={drink} />
+        ))}
+      </div>
     </div>
   );
 }
