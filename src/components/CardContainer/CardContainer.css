@@ -1,5 +1,26 @@
-.cardContainer {
+/*.cardContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}*/
+
+.cardContainer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%;
+  padding: 20px; 
+}
+
+.cardContainer .drinkResultsHeader {
+  font-size: 24px; 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+  text-align: center; 
+}
+
+.cardContainer .card {
+  flex: 1; 
+  margin: 0 10px; 
+  max-width: 300px; 
 }
