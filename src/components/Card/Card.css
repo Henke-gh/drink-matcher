@@ -1,0 +1,34 @@
+.card {
+  background-color: var(--grey);
+  border-radius: 0.5rem;
+  width: 20rem;
+  max-width: 80%;
+  padding: 0rem 1rem;
+  margin: 0.5rem 0rem;
+  font-family: var(--coming-soon);
+  font-weight: 300;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cocktailImage {
+  width: 8rem;
+  height: 8rem;
+  margin-top: 1rem;
+  border-radius: 50%;
+}
+
+.bold {
+  font-weight: bold;
+}

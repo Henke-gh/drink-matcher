@@ -1,20 +1,17 @@
 .footer {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 15px;
-    padding: 15px 0;
-    justify-content: center;
-  }
-  
-  .copyrightText {
-    font-family: "Barrio", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2rem;
-    border-top: var(--white) solid 2px;
-    padding-top: 12px;
-   width: 70%;
-    text-align: center;
-    color: var(--white);
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 15px;
+  padding: 15px 0;
+  justify-content: center;
+}
+
+.copyrightText {
+  font-family: "Barrio", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  border-top: var(--yellow) solid 1px;
+  padding-top: 8px;
+}
