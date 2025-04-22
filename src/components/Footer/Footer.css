@@ -11,10 +11,11 @@
 .copyrightText {
   font-family: "Barrio", system-ui;
   font-weight: 400;
-  color:white;
+
+  color: var(--yellow);
   font-style: normal;
   font-size: 1.5rem;
-  border-top: var(--white) solid 3px;
+  border-top: var(--yellow) solid 3px;
   padding-top: 12px;
   width: 70%;
 }
