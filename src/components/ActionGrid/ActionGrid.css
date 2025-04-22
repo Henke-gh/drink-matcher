@@ -1,7 +1,7 @@
 /* Presentation.css - Estilos básicos para ActionGrid */
 
 .action-grid {
-    background-color: #f5f5f5;
+    background-color: #3b3b3b; 
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -10,7 +10,7 @@
   }
   
   .grid-title {
-    color: #4a5568;
+    color: white;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -31,7 +31,7 @@
   }
   
   .occasion-button {
-    background-color: white;
+    background-color: #f5e4a4;
     border: 1px solid #e2e8f0;
     border-radius: 6px;
     padding: 12px;
