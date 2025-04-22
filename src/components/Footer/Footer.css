@@ -11,7 +11,10 @@
     font-family: "Barrio", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 1rem;
-    border-top: var(--white) solid 1px;
-    padding-top: 8px;
+    font-size: 2rem;
+    border-top: var(--white) solid 2px;
+    padding-top: 12px;
+   width: 70%;
+    text-align: center;
+    color: var(--white);
   }
