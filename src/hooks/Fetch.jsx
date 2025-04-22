@@ -1,22 +1,27 @@
 import { useEffect, useState } from "react";
 
-/* useDataFetch currently only fetches 1 ID, cocktailID can't handle more ID searches at once.
-save each result to an array or state, then present all data. Or we can rewrite this hook to perform multiple ID searches. */
+/* this hook fetches data from the cocktailDB by ID, as many Ids as provided in selectedDrinkIDs */
 
-export default function useDataFetch(drinkID) {
+export default function useDataFetch(selectedDrinkIDs) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const url =
-    "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID;
+
+  const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
   useEffect(() => {
+    if (!selectedDrinkIDs || selectedDrinkIDs.length === 0) return;
+
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(url);
-        const json = await response.json();
-        setData(json.drinks ? json.drinks[0] : null);
+        const responses = await Promise.all(
+          selectedDrinkIDs.map((id) =>
+            fetch(url + id).then((res) => res.json())
+          )
+        );
+        const drinks = responses.map((response) => response.drinks[0]);
+        setData(drinks);
       } catch (err) {
         setError(err);
       } finally {
@@ -25,19 +30,7 @@ export default function useDataFetch(drinkID) {
     };
 
     fetchData();
-  }, [drinkID]);
+  }, [selectedDrinkIDs]);
 
   return { data, loading, error };
 }
-
-/* Usage example for the hook:
-
-import useDataFetch from "./hooks/Fetch";
-const { data: drink, loading, error } = useDataFetch("11007");
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-  
-  <h2>{drink?.strDrink}</h2>
-    <p>{drink?.strInstructions}</p>
-    <img src={drink?.strDrinkThumb} alt={drink?.strDrink} />
-      */
