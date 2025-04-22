@@ -4,4 +4,4 @@
 
 Matching drinks with occasions.
 
-A small React student project which fetches a selection cocktails for a number of occasions from [text](https://www.thecocktaildb.com/) and presents them to the user.
+A small React student project which fetches a selection cocktails for a number of occasions from [the CocktailDB](https://www.thecocktaildb.com/) and presents them to the user.
