@@ -8,9 +8,9 @@ function App() {
   return (
     <>
       <Header />
-      <Presentation/>
+      <Presentation />
       <ActionGrid />
-        <Footer />
+      <Footer />
     </>
   );
 }
