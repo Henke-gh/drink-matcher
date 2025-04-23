@@ -6,14 +6,15 @@
 
 .cardContainer {
   display: flex;
-  justify-content: space-between; 
+  flex-direction: column;
+  justify-content: center; 
   align-items: center; 
   width: 100%;
-  padding: 20px; 
+  padding: 30px; 
 }
 
 .cardContainer .drinkResultsHeader {
-  font-size: 24px; 
+  font-size: 40px; 
   font-weight: bold; 
   margin-bottom: 20px; 
   text-align: center; 
@@ -21,6 +22,21 @@
 
 .cardContainer .card {
   flex: 1; 
-  margin: 0 10px; 
+  margin: 16px 0px; 
   max-width: 300px; 
 }
+
+.cardsWrapper {
+  display: flex;
+ flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 30px;
+}
+
+/* @media (min-width: 768px) {
+  .cardsWrapper {
+    flex-direction: row; /* Switch to a row layout 
+    justify-content: space-between;
+  }
+}*/
