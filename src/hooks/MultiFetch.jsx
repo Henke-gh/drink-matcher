@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 /* this hook fetches data from the cocktailDB by ID, as many Ids as provided in selectedDrinkIDs */
 
-export default function useDataFetch(selectedDrinkIDs) {
+export default function useMultiDataFetch(selectedDrinkIDs) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
