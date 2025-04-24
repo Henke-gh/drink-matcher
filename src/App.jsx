@@ -7,6 +7,8 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Presentation from "./components/Presentation/Presentation";
 import ToTop from "./components/ToTop/ToTop";
+import NavSearch from "./components/NavSearch/NavSearch";
+
 
 function App() {
   const [selectedDrinkIDs, setSelectedDrinkIDs] = useState([]);
@@ -14,12 +16,13 @@ function App() {
   return (
     <>
       <Header />
+      
       <Presentation />
-
       <ActionGrid onOccasionSelect={setSelectedDrinkIDs} />
       {selectedDrinkIDs.length > 0 && (
         <CardContainer selectedDrinkIDs={selectedDrinkIDs} />
       )}
+      <NavSearch />
       <Footer />
       <ToTop />
     </>
