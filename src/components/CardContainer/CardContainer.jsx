@@ -11,7 +11,7 @@ export default function CardContainer({ selectedDrinkIDs }) {
       <h1 className="drinkResultsHeader">Enjoy your drinks!</h1>
       <div className="cards">
         {drinks.map((drink, index) => (
-          <Card key={index} drink={drink} />
+          <Card key={index} drink={drink} className="card" />
         ))}
       </div>
     </div>

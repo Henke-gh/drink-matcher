@@ -1,173 +1,189 @@
 /* Estilos generales del header y búsqueda */
 .search-header {
-    background-color: var(--black);
-    color: var(--yellow);
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  color: var(--yellow);
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  padding: 0 20px;
+  /* border-bottom: 2px solid var(--yellow); */
+  justify-content: center;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-container h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: var(--coming-soon), "Comic Sans MS", "Comic Sans", cursive;
+  text-shadow: 0 0 5px rgba(255, 255, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo-container h1:hover {
+  transform: scale(1.05);
+}
+
+.search-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--yellow);
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--yellow);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 8px var(--yellow);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 0, 0.5);
+}
+
+.search-button {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--yellow);
+  color: var(--black);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--coming-soon), "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.search-button:hover:not(:disabled) {
+  background-color: #fff200;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(255, 255, 0, 0.4);
+}
+
+/* Results */
+.search-results {
+  margin-top: 2rem;
+  text-align: center;
+  min-height: 200px;
+}
+
+/* Drink card specific for result*/
+.drink-card {
+  background-color: var(--grey);
+  border: 1px solid var(--yellow);
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drink-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.drink-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-family: var(--coming-soon), "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.drink-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.drink-image:hover {
+  transform: scale(1.02);
+}
+
+.drink-instructions {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--yellow);
+}
+
+.drink-details {
+  text-align: left;
+}
+
+/* Messages */
+.loading-message,
+.error-message,
+.no-results {
+  color: var(--yellow);
+  font-style: italic;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 0, 0.05);
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  border-left: 3px solid #ff6b6b;
+}
+
+.no-results {
+  border-left: 3px solid var(--yellow);
+}
+
+/* Animación de loading */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.loading-message {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@media (min-width: 750px) {
+  .search-header {
     align-items: center;
-   /* border-bottom: 2px solid var(--yellow); */
-   justify-content: center;
   }
-  
-  .nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  .logo-container h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: var(--coming-soon), "Comic Sans MS", "Comic Sans", cursive;
-    text-shadow: 0 0 5px rgba(255, 255, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  .logo-container h1:hover {
-    transform: scale(1.05);
-  }
-  
-  .search-container {
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .search-form {
-    display: flex;
-    gap: 0.5rem;
-  }
-  
-  .search-input {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: 2px solid var(--yellow);
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: var(--yellow);
-    transition: all 0.3s ease;
-  }
-  
-  .search-input:focus {
-    outline: none;
-    box-shadow: 0 0 8px var(--yellow);
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-  
-  .search-input::placeholder {
-    color: rgba(255, 255, 0, 0.5);
-  }
-  
-  .search-button {
-    padding: 0.75rem 1.25rem;
-    background-color: var(--yellow);
-    color: var(--black);
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: var(--coming-soon), "Comic Sans MS", "Comic Sans", cursive;
-  }
-  
-  .search-button:hover:not(:disabled) {
-    background-color: #fff200;
-    transform: translateY(-2px);
-    box-shadow: 0 3px 10px rgba(255, 255, 0, 0.4);
-  }
-  
-  .search-button:disabled {
-    background-color: rgba(255, 255, 0, 0.3);
-    color: rgba(0, 0, 0, 0.5);
-    cursor: not-allowed;
-  }
-  
-  /* Results */
-  .search-results {
-    margin-top: 2rem;
-    text-align: center;
-    min-height: 200px;
-  }
-  
-  /* Drink card specific for result*/
-  .drink-card {
-    background-color: rgba(255, 255, 0, 0.1);
-    border: 1px solid var(--yellow);
-    border-radius: 8px;
-    padding: 1.5rem;
-    max-width: 400px;
-    margin: 0 auto;
-    color: var(--yellow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .drink-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  }
-  
-  .drink-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    font-family: var(--coming-soon), "Comic Sans MS", "Comic Sans", cursive;
-  }
-  
-  .drink-image {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-  }
-  
-  .drink-image:hover {
-    transform: scale(1.02);
-  }
-  
-  .drink-instructions {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 0, 0.9);
-  }
-  
-  /* Messages */
-  .loading-message,
-  .error-message,
-  .no-results {
-    color: var(--yellow);
-    font-style: italic;
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: rgba(255, 255, 0, 0.05);
-    border-radius: 4px;
-    font-size: 1.1rem;
-  }
-  
-  .error-message {
-    border-left: 3px solid #ff6b6b;
-  }
-  
-  .no-results {
-    border-left: 3px solid var(--yellow);
-  }
-  
-  
-  /* Animación de loading */
-  @keyframes pulse {
-    0% { opacity: 0.6; }
-    50% { opacity: 1; }
-    100% { opacity: 0.6; }
-  }
-  
-  .loading-message {
-    animation: pulse 1.5s infinite ease-in-out;
-  }
+}
