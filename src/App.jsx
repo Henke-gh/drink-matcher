@@ -9,20 +9,19 @@ import Presentation from "./components/Presentation/Presentation";
 import ToTop from "./components/ToTop/ToTop";
 import NavSearch from "./components/NavSearch/NavSearch";
 
-
 function App() {
   const [selectedDrinkIDs, setSelectedDrinkIDs] = useState([]);
-  
+
   return (
     <>
       <Header />
-      
+
       <Presentation />
+      <NavSearch />
       <ActionGrid onOccasionSelect={setSelectedDrinkIDs} />
       {selectedDrinkIDs.length > 0 && (
         <CardContainer selectedDrinkIDs={selectedDrinkIDs} />
       )}
-      <NavSearch />
       <Footer />
       <ToTop />
     </>

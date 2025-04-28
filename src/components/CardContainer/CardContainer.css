@@ -1,38 +1,41 @@
-
 .cardContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  
+
   /*padding: 30px; */
 }
 
 .cardContainer .drinkResultsHeader {
-  font-size: 40px; 
-  font-weight: bold; 
-  margin-bottom: 20px; 
-  text-align: center; 
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.cardContainer .card {
-  flex: 1; 
-  margin: 16px 0px; 
-  max-width: 300px; 
-}
-
-.cardsWrapper {
+.cards {
   display: flex;
- flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
   width: 100%;
-  gap: 30px;
 }
 
-/* @media (min-width: 768px) {
-  .cardsWrapper {
-    flex-direction: row; /* Switch to a row layout 
-    justify-content: space-between;
+.cards .card {
+  flex: 1 1 100%;
+  max-width: 300px;
+}
+
+@media (min-width: 750px) {
+  .cards .card {
+    flex: 1 1 calc(50% - 1rem);
   }
-}*/
+}
+
+@media (min-width: 1000px) {
+  .cards .card {
+    flex: 1 1 calc(33.33% - 1rem);
+  }
+}

@@ -16,52 +16,74 @@ const SearchHeader = () => {
     setQueryTerm(searchTerm.trim());
   };
 
+  const getIngredientsAndMeasurements = (drink) => {
+    const ingredients = [];
+    for (let i = 1; i <= 15; i++) {
+      const ingredient = drink[`strIngredient${i}`];
+      const measure = drink[`strMeasure${i}`];
+      if (!ingredient) break; // Stop if no more ingredients
+      ingredients.push(`${measure || ""} ${ingredient}`.trim());
+    }
+    return ingredients;
+  };
+
   return (
     <header className="search-header">
       <nav className="nav-container">
         <div className="logo-container">
-          <h1>Find your Mix</h1>
+          <h2>Find your Cocktail</h2>
         </div>
         <div className="search-container">
           <form onSubmit={handleSearchSubmit} className="search-form">
             <input
-              type="text" 
-              placeholder="Find cocktail" 
+              type="text"
+              placeholder="Find cocktail"
               value={searchTerm}
               onChange={handleSearchChange}
               className="search-input"
               aria-label="search cocktail"
             />
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="search-button"
-              disabled={!searchTerm.trim()}
-            >
-              Go for a drink
+              disabled={!searchTerm.trim()}>
+              Get Drink
             </button>
           </form>
         </div>
       </nav>
 
       {/* Results of search */}
-      <div className="search-results">
-        {loading && <p className="loading-message">Loading...</p>}
-        {error && <p className="error-message">Error: {error.message}</p>}
-        {data && !loading && !error ? (
+      {loading && <p className="loading-message">Loading...</p>}
+      {error && <p className="error-message">Error: No drinks found.</p>}
+      {data && !loading && !error ? (
+        <div className="search-results">
           <div className="drink-card">
             <h2 className="drink-title">{data.strDrink}</h2>
-            <img 
-              src={data.strDrinkThumb} 
-              alt={`Cocktail ${data.strDrink}`} 
+            <img
+              src={data.strDrinkThumb}
+              alt={`Cocktail ${data.strDrink}`}
               className="drink-image"
               loading="lazy"
             />
-            <p className="drink-instructions">{data.strInstructions}</p>
+            <div className="drink-details">
+              <p className="bold">Ingredients</p>
+              <ul className="ingredients-list">
+                {getIngredientsAndMeasurements(data).map(
+                  (ingredient, index) => (
+                    <li key={index} className="ingredient-item">
+                      {ingredient}
+                    </li>
+                  )
+                )}
+              </ul>
+              <p className="drink-instructions">{data.strInstructions}</p>
+            </div>
           </div>
-        ) : !loading && queryTerm && !data && !error ? (
-          <p className="no-results">No cocktails found. Try another search!</p>
-        ) : null}
-      </div>
+        </div>
+      ) : !loading && queryTerm && !data && !error ? (
+        <p className="no-results">No cocktails found. Try another search!</p>
+      ) : null}
     </header>
   );
 };
